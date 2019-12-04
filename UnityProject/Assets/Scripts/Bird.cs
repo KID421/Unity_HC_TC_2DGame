@@ -66,6 +66,10 @@ public class Bird : MonoBehaviour
 
             aud.PlayOneShot(soundJump, 1.5f);       // 音源.播放一次(音效片段，音量)
         }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            r2d.gravityScale = 3.5f;
+        }
 
         r2d.SetRotation(angle * r2d.velocity.y);    // 2D 剛體.設定角度(角度)
         //print(r2d.velocity);
