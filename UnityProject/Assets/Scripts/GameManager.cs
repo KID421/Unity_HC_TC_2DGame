@@ -64,6 +64,22 @@ public class GameManager : MonoBehaviour
         Instantiate(pipe, p, Quaternion.identity);
     }
 
+    /// <summary>
+    /// 重新遊戲
+    /// </summary>
+    public void Replay()
+    {
+        print("重新遊戲");
+    }
+
+    /// <summary>
+    /// 離開遊戲
+    /// </summary>
+    public void Exit()
+    {
+        print("離開遊戲");
+    }
+
     private void Start()
     {
         //SpawnPipe();
