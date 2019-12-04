@@ -18,6 +18,12 @@ public class Bird : MonoBehaviour
     public AudioSource aud;
     public AudioClip soundJump, soundHit, soundPass;
 
+    private void Start()
+    {
+        // 螢幕.設定解析度(寬，高，是否全螢幕);
+        Screen.SetResolution(450, 800, false);
+    }
+
     private void Update()
     {
         Jump();
