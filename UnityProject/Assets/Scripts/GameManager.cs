@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
         print("加分!!!");
         score = score + add;
         textScore.text = score.ToString();
+
+        SetHeightScore();
     }
 
     /// <summary>
@@ -30,7 +32,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void SetHeightScore()
     {
-
+        if (score > scoreHeight)
+        {
+            PlayerPrefs.SetInt("最佳分數", score);
+        }
     }
 
     /// <summary>
@@ -66,5 +71,8 @@ public class GameManager : MonoBehaviour
         // Invoke("SpawnPipe", 1.5f);
         // 延遲重複調用("方法名稱"，延遲時間，重複頻率);
         InvokeRepeating("SpawnPipe", 0, 1.8f);
+
+        scoreHeight = PlayerPrefs.GetInt("最佳分數");
+        textHeight.text = scoreHeight.ToString();
     }
 }
