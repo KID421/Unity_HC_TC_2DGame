@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;   // 引用 介面 API
+using UnityEngine.UI;               // 引用 介面 API
+using UnityEngine.SceneManagement;  // 引用 場景管理 API
 
 public class GameManager : MonoBehaviour
 {
@@ -70,6 +71,8 @@ public class GameManager : MonoBehaviour
     public void Replay()
     {
         print("重新遊戲");
+        //Application.LoadLevel("遊戲場景");    // 舊版 API
+        SceneManager.LoadScene("遊戲場景");     // 新版 API
     }
 
     /// <summary>
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour
     public void Exit()
     {
         print("離開遊戲");
+        Application.Quit();
     }
 
     private void Start()
